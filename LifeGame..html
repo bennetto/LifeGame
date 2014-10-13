@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title>LifeGame</title>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script src="snap.svg-min.js"></script>
+	<script src="cell.js"></script>
+	<script src="gameLife.js"></script>
+	<link type="text/css" rel="stylesheet" media="all" href="LifeGame.css">
+
+</head>
+
+<body >
+	<div class="menu-game">
+		<svg id="slider-size"> 
+			<g>
+			
+			</g>
+		</svg>
+	<input id="inputSize" type="text" name="size" placeholder="x" value="30" />
+	<svg id="title-menu" class="clickButton"> 
+	<g>
+		<rect x="0" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect> 
+		<rect x="0" y="10" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="0" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="0" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="0" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="10" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="20" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		
+		<rect x="40" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="40" y="10" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="40" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="40" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="40" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		
+		<rect x="60" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="70" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="60" y="10" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="60" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="70" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="60" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="60" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		
+		<rect x="90" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="100" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="90" y="10" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="90" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="100" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="90" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="90" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="100" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		
+		
+		
+		<rect x="180" y="00" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="170" y="00" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="160" y="00" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="150" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="150" y="10" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="150" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="150" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="150" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="160" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="170" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="180" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="180" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="180" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="170" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		
+		<rect x="200" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="200" y="10" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="200" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="200" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="200" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="210" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="220" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="220" y="10" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="220" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="220" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="220" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="210" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		
+		<rect x="240" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="240" y="10" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="240" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="240" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="240" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="250" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="260" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="260" y="10" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="260" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="260" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="260" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="270" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="280" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="280" y="10" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="280" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="280" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="280" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		
+		
+		<rect x="300" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="310" y="0" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="300" y="10" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="300" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="310" y="20" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="300" y="30" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="300" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		<rect x="310" y="40" width="10" height="10" fill="#008000" rx="0" ry="0"></rect>
+		</g>
+	</svg>
+			
+
+		<input id="speedGame" class="speedGame" type="text" name="nbCellX" placeholder="speed" value="10" >fps</input>
+	<p id="printFps">fps</p>
+	</div>
+	
+		<div class="game" >
+			<svg id="svg" width="100%" height="100%">
+			</svg>
+		</div>
+	
+
+	<script>
+	var myButton = $(".clickButton");
+	var myCellLife2 = $("#cellLife2");
+	
+	var game = new GameLife("#svg");
+	
+
+	//g.animate({ transform:"scale("+5+")" },300);
+		
+	var ok = false;
+	myButton.click(function(){
+		if(game.isRunnig())
+		{
+			game.stopGame();
+		}else{
+			game.launchGame(parseInt($("#speedGame").val()));
+		}
+		
+	});
+	
+	$("#inputSize").change(function(){
+			var realSize = $("#inputSize").val();
+		game.reScale(realSize);
+	});
+	
+		$("#speedGame").change(function(){
+		game.changeFps(parseInt($("#speedGame").val()));
+		
+	});
+	
+		var realSize = $("#inputSize").val();
+	game.reScale(realSize);
+	</script>
+</body>
+
+</html>
